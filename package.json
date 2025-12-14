@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "My professional personal website",
   "scripts": {
-    "start": "npx serve ."
-  },
+    "start": "npx serve .",
+    "deploy:netlify": "netlify deploy --dir=./ --prod"
+  }
   "keywords": [],
   "author": "",
   "license": "ISC"

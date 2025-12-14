@@ -1,0 +1,13 @@
+[build]
+  command = ""
+  publish = "."
+
+[context.production.environment]
+  NODE_ENV = "production"
+
+# Optional: configure redirects
+# [[redirects]]
+#   from = "/old-path"
+#   to = "/new-path"
+#   status = 301
+#   force = false
