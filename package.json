@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npx serve .",
     "deploy:netlify": "netlify deploy --dir=./ --prod"
-  }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
