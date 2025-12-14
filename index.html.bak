@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio | Creative Developer</title>
+    <meta name="description" content="Portfolio of a creative professional." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Inline minimal style for chat demo modal to ensure it works even if you didn't style it in style.css -->
+    <style>
+        /* Minimal modal/chat demo styles */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal {
+            width: min(520px, 96%);
+            background: #fff;
+            border-radius: 10px;
+            padding: 14px;
+            box-shadow: 0 6px 28px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .modal header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-messages {
+            max-height: 360px;
+            overflow-y: auto;
+            border-radius: 6px;
+            padding: 8px;
+            background: #f8f8f8;
+        }
+
+        .message {
+            margin: 6px 0;
+            padding: 8px 10px;
+            border-radius: 10px;
+            max-width: 85%;
+            line-height: 1.4;
+        }
+
+        .message.user {
+            background: #cfe9ff;
+            align-self: flex-end;
+        }
+
+        .message.bot {
+            background: #eef2ff;
+            align-self: flex-start;
+        }
+
+        .chat-form {
+            display: flex;
+            gap: 8px;
+        }
+
+        .chat-form input[type="text"] {
+            flex: 1;
+            padding: 8px 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .chat-form button {
+            padding: 8px 10px;
+            border-radius: 8px;
+            border: none;
+            background: #222;
+            color: white;
+            cursor: pointer;
+        }
+
+        .chat-demo-open {
+            margin-top: 10px;
+        }
+
+        /* placeholder-gradient-3 small default styling (if missing in style.css) */
+        .placeholder-gradient-3 {
+            min-height: 160px;
+            background: linear-gradient(135deg, rgba(230,230,250,0.8), rgba(240,240,255,0.6));
+            border-radius: 8px;
+        }
+
+        @media (max-width: 520px) {
+            .modal {
+                padding: 10px;
+            }
+            .chat-messages {
+                max-height: 240px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo"><img src="logo.png" alt="The African Dream" class="logo-img" /></div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Work</a></li>
+            <li><a href="#pitch">Pitch</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section (The Gist) -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <span class="greeting">Hello, I'm Lewis Kimari</span>
+            <h1 class="gradient-text"><span id="typing-text"></span><span class="cursor">&nbsp;</span></h1>
+            <p class="subtitle">Building digital experiences that matter.</p>
+            <div class="cta-buttons">
+                <a href="#portfolio" class="btn primary">View Work</a>
+                <a href="#pitch" class="btn secondary">My Pitch</a>
+            </div>
+        </div>
+        <div class="hero-background">
+            <div class="glow-orb orb-1"></div>
+            <div class="glow-orb orb-2"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="glass-card fade-in">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>Who I Am</h3>
+                        <p>I am a passionate creator focused on crafting intuitive and dynamic user experiences. With a
+                            strong foundation in modern web technologies, I bridge the gap between design and
+                            engineering.</p>
+                        <p>I believe in the power of minimalism and functional code to solve complex problems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2 class="section-title">Selected Work</h2>
+            <div class="portfolio-grid">
+
+                <!-- Project 1 -->
+                <div class="project-card fade-in">
+                    <div class="card-image">
+                        <!-- (Image intentionally commented out; add back if desired) -->
+                        <!-- <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80"
+                            alt="Modern house search interface" class="project-image" /> -->
+                    </div>
+
+                    <div class="card-content">
+                        <h3>Space Core</h3>
+                        <p>
+                            Space Core is a platform designed to help people search for houses while enabling property
+                            owners to easily list their properties. It simplifies the real estate process by connecting
+                            buyers and sellers in one place.
+                        </p>
+                        <a href="https://github.com/LewisKimari/Space-Core" target="_blank" rel="noopener noreferrer" class="link-arrow">
+                            View Repository &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 (AI Chatbot) -->
+                <div class="project-card fade-in" style="transition-delay: 0.2s;">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1601066520418-2418916f5dee?auto=format&fit=crop&w=1200&q=80"
+                            alt="AI chatbot interface" class="project-image" />
+                    </div>
+                    <div class="card-content">
+                        <h3>AI Chatbot (Lewis_AI)</h3>
+                        <p>
+                            A simple educational assistant that:
+                        </p>
+                        <ul>
+                            <li>Provides info about software development courses (Android, Web, Full‑stack).</li>
+                            <li>Answers basic greetings and small talk.</li>
+                            <li>Guides users on how to join or enroll in courses.</li>
+                        </ul>
+
+                        <div class="cta-row" style="display:flex; gap:8px; align-items:center; margin-top:10px">
+                            <a href="https://github.com/LewisKimari/Lewis_AI"
+                                target="_blank" rel="noopener noreferrer" class="link-arrow">View Repository &rarr;</a>
+                            <button id="open-chat-demo" class="btn primary chat-demo-open">Try Demo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 (Data Science: Lewis_DS) -->
+                <div class="project-card fade-in" style="transition-delay: 0.4s;">
+                    <div class="card-image placeholder-gradient-3" aria-hidden="true"></div>
+                    <div class="card-content">
+                        <h3>Data Pipeline & Predictive Insights (Lewis_DS)</h3>
+                        <p>
+                            A simple data pipeline that cleans and preprocesses CSV datasets, trains machine learning
+                            models for analysis, and produces predictions with actionable insights.
+                        </p>
+                        <ul>
+                            <li>CSV cleaning & preprocessing (Pandas)</li>
+                            <li>Feature engineering, model training & evaluation (scikit-learn)</li>
+                            <li>Predict outcomes and generate insights for decision-making</li>
+                        </ul>
+                        <div class="cta-row" style="display:flex; gap:8px; align-items:center; margin-top:10px">
+                            <a href="https://github.com/LewisKimari/Lewis_DS"
+                                target="_blank" rel="noopener noreferrer" class="link-arrow">View Repository &rarr;</a>
+                            <a href="https://github.com/LewisKimari/Lewis_DS#examples" target="_blank" rel="noopener noreferrer" class="link-arrow">Examples &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- .portfolio-grid -->
+        </div> <!-- .container -->
+    </section> <!-- #portfolio -->
+
+    <!-- Elevator Pitch Section -->
+    <section id="pitch" class="section pitch-section">
+        <div class="container">
+            <div class="pitch-container glass-card fade-in">
+                <h2 class="section-title">The Elevator Pitch</h2>
+                <div class="pitch-content">
+                    <p class="pitch-text">
+                        "I combine technical expertise with a designer's eye to build products that stand out.
+                        In a crowded digital landscape, I don't just write code; I create memorable interactions
+                        that drive engagement and business growth. If you're looking for someone who can
+                        take a concept from zero to one with polish and precision, I'm your person."
+                    </p>
+                </div>
+                <div class="pitch-decoration"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Modal (Lightweight Demo) -->
+    <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal" role="document" aria-label="Chat demo">
+            <header>
+                <strong>Lewis_AI</strong>
+                <button id="close-chat-demo" aria-label="Close chat">✕</button>
+            </header>
+            <div id="chat-messages" class="chat-messages" aria-live="polite"></div>
+            <form id="chat-form" class="chat-form" autocomplete="off">
+                <input id="chat-input" type="text" name="message" placeholder="Say hi, ask about Android, Web, Full-stack or how to enroll..." />
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Creative Developer. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Minimal inline chat demo behavior -->
+    <script>
+        (function () {
+            // modal and chat UI
+            const modalOverlay = document.getElementById('modal-overlay');
+            const openBtn = document.getElementById('open-chat-demo');
+            const closeBtn = document.getElementById('close-chat-demo');
+            const chatForm = document.getElementById('chat-form');
+            const chatInput = document.getElementById('chat-input');
+            const chatMessages = document.getElementById('chat-messages');
+
+            function showModal() {
+                modalOverlay.style.display = 'flex';
+                modalOverlay.setAttribute('aria-hidden', 'false');
+                chatInput.focus();
+                addBotMessage("Hello! I'm Lewis_AI — your course assistant. Ask me about Android, Web, Full-stack courses, greetings or how to enroll.");
+            }
+
+            function hideModal() {
+                modalOverlay.style.display = 'none';
+                modalOverlay.setAttribute('aria-hidden', 'true');
+                chatMessages.innerHTML = '';
+            }
+
+            function scrollMessagesToBottom() {
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function addUserMessage(text) {
+                const p = document.createElement('div');
+                p.className = 'message user';
+                p.textContent = text;
+                chatMessages.appendChild(p);
+                scrollMessagesToBottom();
+            }
+
+            function addBotMessage(text) {
+                const p = document.createElement('div');
+                p.className = 'message bot';
+                p.textContent = text;
+                chatMessages.appendChild(p);
+                scrollMessagesToBottom();
+            }
+
+            function getBotReply(message) {
+                const msg = message.toLowerCase();
+
+                // Matches greetings
+                if (/^(hi|hello|hey|yo|good morning|good afternoon|good evening)(\b|!|.)/.test(msg) ||
+                    msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) {
+                    return "Hi there! I’m Lewis_AI. Which course are you interested in? (Android, Web, or Full‑stack) — or ask how to enroll.";
+                }
+
+                // Course-specific answers
+                if (msg.includes('android')) {
+                    return "Android course: Learn Kotlin/Java, Android SDK, Jetpack Compose, and app deployment to Play Store. Typical duration: 8-12 weeks.";
+                }
+
+                if (msg.includes('web') && !msg.includes('full')) {
+                    return "Web course: Learn HTML, CSS, JavaScript, React or modern front-end libraries, responsive design and deployment. Typical duration: 6-10 weeks.";
+                }
+
+                if (msg.includes('full') || msg.includes('full-stack') || (msg.includes('stack') && msg.includes('full'))) {
+                    return "Full‑stack: Covers both front-end (React) and back-end (Node/Express or similar), databases, REST APIs, and deployment. Typical duration: 12-16 weeks.";
+                }
+
+                // Enrollment questions
+                if (msg.includes('enroll') || msg.includes('join') || msg.includes('register') || msg.includes('how to join')) {
+                    return "To enroll: 1) Visit the course repository or website; 2) Follow the enrollment steps (sign-up form, payment if required); 3) Check email confirmation. Ask me which course you'd like to join!";
+                }
+
+                // Small talk / default fallback
+                if (msg.includes('thanks') || msg.includes('thank')) {
+                    return "You're welcome! Let me know if you want more course details.";
+                }
+
+                if (msg.includes('help') || msg.includes('what can you do') || msg.includes('what can you')) {
+                    return "I can give course descriptions (Android, Web, Full‑stack), answer greetings and show how to enroll. Try asking about a specific course.";
+                }
+
+                return "I’m sorry, I didn't get that. Try asking about 'Android', 'Web', 'Full-stack', or 'How to enroll'.";
+            }
+
+            // Event listeners
+            openBtn && openBtn.addEventListener('click', function () {
+                showModal();
+            });
+
+            closeBtn && closeBtn.addEventListener('click', function () {
+                hideModal();
+            });
+
+            chatForm && chatForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const val = (chatInput.value || '').trim();
+                if (!val) return;
+                addUserMessage(val);
+                chatInput.value = '';
+                chatInput.disabled = true;
+
+                // simulate thinking
+                setTimeout(() => {
+                    const reply = getBotReply(val);
+                    addBotMessage(reply);
+                    chatInput.disabled = false;
+                    chatInput.focus();
+                }, 450);
+            });
+
+            // close modal overlay by outside click
+            modalOverlay && modalOverlay.addEventListener('click', function (ev) {
+                if (ev.target === modalOverlay) {
+                    hideModal();
+                }
+            });
+
+            // basic keyboard shortcut: Esc to close
+            window.addEventListener('keydown', function (ev) {
+                if (ev.key === 'Escape') {
+                    hideModal();
+                }
+            });
+
+            // Ensure a visible default trigger exists (in case JS loaded after DOM)
+            if (!openBtn) {
+                // If the TRY DEMO button is missing for some reason, create a tiny floating open button
+                const fallbackBtn = document.createElement('button');
+                fallbackBtn.textContent = 'Chat Demo';
+                fallbackBtn.style.position = 'fixed';
+                fallbackBtn.style.right = '16px';
+                fallbackBtn.style.bottom = '16px';
+                fallbackBtn.style.padding = '10px 12px';
+                fallbackBtn.style.borderRadius = '8px';
+                fallbackBtn.style.border = 'none';
+                fallbackBtn.style.background = '#1a73e8';
+                fallbackBtn.style.color = '#fff';
+                fallbackBtn.style.zIndex = '999';
+                fallbackBtn.addEventListener('click', showModal);
+                document.body.appendChild(fallbackBtn);
+            }
+        })();
+    </script>
+</body>
+
+</html>
