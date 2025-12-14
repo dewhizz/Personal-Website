@@ -311,6 +311,16 @@
     <script>
         (function () {
             
+    window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 20) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    });
+
+
             // modal and chat UI
             const modalOverlay = document.getElementById('modal-overlay');
             const openBtn = document.getElementById('open-chat-demo');
