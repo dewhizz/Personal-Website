@@ -421,6 +421,10 @@ a {
     height: 250px;
     object-fit: cover;
     
+    /* FIX APPLIED HERE: Adjusts the focus of the image to the top 
+       to ensure the full face is visible within the circle. */
+    object-position: top;
+    
     /* Make the photo a circle */
     border-radius: 50%;
     
@@ -508,7 +512,7 @@ a {
 }
 
 /* Make sure the message text uses dark color
-   and inputs are readable on lighter backgrounds */
+    and inputs are readable on lighter backgrounds */
 .chat-messages .message,
 .chat-messages .message * {
     color: #111;
