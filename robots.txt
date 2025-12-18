@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://lewis-kimari-portfolio.netlify.app/sitemap.xml
+Sitemap: https://dewhizz.github.io/Personal-Website/sitemap.xml
