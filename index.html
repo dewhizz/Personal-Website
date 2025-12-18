@@ -7,7 +7,7 @@
     <title>My Portfolio | Creative Developer</title>
     <meta name="description" content="Portfolio of a creative professional." />
 
-    <meta name="google-site-verification=H36XjHwj91PBwOTt6VgaqX9L-ly2uobfmlntST--S2c" content="UNIQUE_CODE_FROM_GOOGLE" />
+    <meta name="google-site-verification" content="H36XjHwj91PBwOTt6VgaqX9L-ly2uobfmlntST--S2c" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -363,7 +363,7 @@
                 <!-- Video Section -->
                 <div class="pitch-video">
                    <video class="hover-video" poster="assets/images/pitch_image.jpg">
-    <source src="assets/videos/pitch_video.mp4" type="video/mp4">
+    <source src="assets/videos/pitch_video_small.mp4" type="video/mp4">
 </video>
 
                 </div>
@@ -410,14 +410,16 @@
 
             const video = document.querySelector(".hover-video");
 
-            video.addEventListener("mouseenter", () => {
-                video.play();
-            });
+            if (video) {
+                video.addEventListener("mouseenter", () => {
+                    video.play();
+                });
 
-            video.addEventListener("mouseleave", () => {
-                video.pause();
-                video.currentTime = 0;
-            });
+                video.addEventListener("mouseleave", () => {
+                    video.pause();
+                    video.currentTime = 0;
+                });
+            }
 
 
 
