@@ -2,8 +2,8 @@
   "name": "personal-portfolio",
   "version": "1.0.0",
   "description": "My professional personal website",
-  "scripts": {
-    "start": "npm run .",
+ "scripts": {
+    "start": " npx serve .",
     "deploy:netlify": "netlify deploy --dir=./ --prod"
   },
   "keywords": [],
