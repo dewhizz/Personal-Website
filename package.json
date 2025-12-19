@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "My professional personal website",
   "scripts": {
-    "start": "live-server .",
-    "deploy:netlify": "netlify deploy --dir=./ --prod"
+    "start": "live-server ."
   },
   "keywords": [],
   "author": "",
